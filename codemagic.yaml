@@ -1,13 +1,10 @@
 workflows:
   flutter-workflow:
     name: Flutter Build
-    instance_type: mac_mini_m1
     environment:
       flutter: stable
     scripts:
-      - name: Get Flutter packages
-        script: flutter pub get
-      - name: Build release APK
-        script: flutter build apk --release
+      - flutter pub get
+      - flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
